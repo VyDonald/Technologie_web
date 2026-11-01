@@ -219,12 +219,24 @@ function StoryJourney({conte, onListen}) {
   </section>
 }
 
+function formatAudioTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) return '0:00'
+  const minutes = Math.floor(seconds / 60)
+  const remainder = Math.floor(seconds % 60).toString().padStart(2, '0')
+  return `${minutes}:${remainder}`
+}
+
 function Lecteur({conte, close, initialIndex = 0}) {
   const [index, setIndex] = useState(initialIndex)
   const [quiz, setQuiz] = useState(false)
   const [language, setLanguage] = useState(conte.langues.includes('Français') ? 'Français' : conte.langues[0])
   const [auto, setAuto] = useState(false)
   const [playback, setPlayback] = useState('idle')
+  const [audioProgress, setAudioProgress] = useState({currentTime: 0, duration: 0})
+  const [hasAudioTrack, setHasAudioTrack] = useState(false)
+  const [usingSpeechSynthesis, setUsingSpeechSynthesis] = useState(false)
+  const [volume, setVolume] = useState(1)
+  const [playbackRate, setPlaybackRate] = useState(1)
   const [message, setMessage] = useState('')
   const [answer, setAnswer] = useState(null)
   const [frenchVoices, setFrenchVoices] = useState([])
@@ -262,6 +274,9 @@ function Lecteur({conte, close, initialIndex = 0}) {
     if (audio) {
       audio.onended = null
       audio.onerror = null
+      audio.ontimeupdate = null
+      audio.onloadedmetadata = null
+      audio.onseeked = null
       audio.pause()
       audio.currentTime = 0
       audioRef.current = null
@@ -281,10 +296,16 @@ function Lecteur({conte, close, initialIndex = 0}) {
   const playScene = () => {
     stopPlayback()
     const session = playbackSessionRef.current
+    setAudioProgress({currentTime: 0, duration: 0})
+    setHasAudioTrack(false)
+    setUsingSpeechSynthesis(false)
     setMessage('')
     setPlayback('playing')
 
     const speakFrench = () => {
+      setHasAudioTrack(false)
+      setUsingSpeechSynthesis(true)
+      setAudioProgress({currentTime: 0, duration: 0})
       if (!('speechSynthesis' in window) || typeof window.SpeechSynthesisUtterance === 'undefined') {
         setPlayback('idle')
         setMessage('La piste française est indisponible et ce navigateur ne prend pas en charge la synthèse vocale.')
@@ -297,7 +318,8 @@ function Lecteur({conte, close, initialIndex = 0}) {
       const voice = selectedVoice || defaultFrenchVoice
       utterance.lang = voice?.lang || 'fr-FR'
       utterance.voice = voice || null
-      utterance.rate = 0.94
+      utterance.rate = playbackRate
+      utterance.volume = volume
       utterance.onend = () => handleSceneEnd(session)
       utterance.onerror = event => {
         if (session !== playbackSessionRef.current || ['canceled', 'interrupted'].includes(event.error)) return
@@ -320,14 +342,27 @@ function Lecteur({conte, close, initialIndex = 0}) {
 
     const languageSlug = language === 'Français' ? 'francais' : language.toLowerCase()
     const audio = new Audio(asset(`audio/${conte.id}-${languageSlug}-${index + 1}.mp3`))
+    audio.volume = volume
+    audio.playbackRate = playbackRate
+    setHasAudioTrack(true)
+    setUsingSpeechSynthesis(false)
+    setAudioProgress({currentTime: 0, duration: 0})
+    const updateAudioProgress = () => setAudioProgress({
+      currentTime: audio.currentTime,
+      duration: Number.isFinite(audio.duration) ? audio.duration : 0,
+    })
     let speechFallbackStarted = false
     const fallBackToSpeech = () => {
       if (speechFallbackStarted || session !== playbackSessionRef.current) return
       speechFallbackStarted = true
       if (audioRef.current === audio) audioRef.current = null
+      setAudioProgress({currentTime: 0, duration: 0})
       speakFrench()
     }
     audioRef.current = audio
+    audio.ontimeupdate = updateAudioProgress
+    audio.onloadedmetadata = updateAudioProgress
+    audio.onseeked = updateAudioProgress
     audio.onended = () => handleSceneEnd(session)
     audio.onerror = () => {
       if (session !== playbackSessionRef.current) return
@@ -376,6 +411,9 @@ function Lecteur({conte, close, initialIndex = 0}) {
   const moveScene = direction => {
     stopPlayback()
     setPlayback('idle')
+    setHasAudioTrack(false)
+    setUsingSpeechSynthesis(false)
+    setAudioProgress({currentTime: 0, duration: 0})
     if (direction > 0 && index === last) {
       setQuiz(true)
       setAnswer(null)
@@ -400,6 +438,26 @@ function Lecteur({conte, close, initialIndex = 0}) {
     } else {
       playScene()
     }
+  }
+
+  const seekAudio = event => {
+    const audio = audioRef.current
+    const time = Number(event.target.value)
+    if (!audio || !Number.isFinite(time)) return
+    audio.currentTime = time
+    setAudioProgress(current => ({...current, currentTime: time}))
+  }
+
+  const changeVolume = event => {
+    const nextVolume = Number(event.target.value)
+    setVolume(nextVolume)
+    if (audioRef.current) audioRef.current.volume = nextVolume
+  }
+
+  const changePlaybackRate = event => {
+    const nextRate = Number(event.target.value)
+    setPlaybackRate(nextRate)
+    if (audioRef.current) audioRef.current.playbackRate = nextRate
   }
 
   const progress = quiz ? 100 : ((index + 1) / conte.scenes.length) * 100
@@ -433,14 +491,39 @@ function Lecteur({conte, close, initialIndex = 0}) {
               </button>
               <button className="control-button secondary" onClick={() => moveScene(1)}>{index === last ? 'Quiz' : 'Suivant'} <span aria-hidden="true">→</span></button>
             </div>
+            <section className="reader-audio-controls" aria-label="Réglages audio">
+              <label className="audio-seek">
+                <span>Progression audio</span>
+                <input type="range" min="0" max={audioProgress.duration || 0} step="0.1"
+                  value={Math.min(audioProgress.currentTime, audioProgress.duration || 0)}
+                  onChange={seekAudio} disabled={!hasAudioTrack || audioProgress.duration <= 0}
+                  aria-label="Position dans la piste audio"/>
+                <output>{formatAudioTime(audioProgress.currentTime)} / {formatAudioTime(audioProgress.duration)}</output>
+              </label>
+              <label className="audio-setting">
+                <span>Volume <output>{Math.round(volume * 100)} %</output></span>
+                <input type="range" min="0" max="1" step="0.05" value={volume}
+                  onChange={changeVolume} aria-label="Volume de lecture"/>
+              </label>
+              <label className="audio-setting">
+                <span>Vitesse</span>
+                <select value={playbackRate} onChange={changePlaybackRate} aria-label="Vitesse de lecture">
+                  {[0.75, 0.9, 1, 1.1, 1.25, 1.5].map(rate =>
+                    <option key={rate} value={rate}>{rate.toLocaleString('fr-FR')}×</option>)}
+                </select>
+              </label>
+              {usingSpeechSynthesis && !hasAudioTrack && <p className="audio-unavailable">
+                La progression de la piste n’est pas disponible avec la voix de synthèse de l’appareil.
+              </p>}
+            </section>
             <div className="reader-options">
               <label>Langue de lecture
-                <select value={language} onChange={event => {stopPlayback(); setPlayback('idle'); setLanguage(event.target.value)}}>
+                <select value={language} onChange={event => {stopPlayback(); setPlayback('idle'); setHasAudioTrack(false); setUsingSpeechSynthesis(false); setAudioProgress({currentTime: 0, duration: 0}); setLanguage(event.target.value)}}>
                   {conte.langues.map(item => <option key={item} value={item}>{item === 'Français' ? item : `${item} · audio à venir`}</option>)}
                 </select>
               </label>
               {language === 'Français' && frenchVoices.length > 0 && <label>Voix
-                <select value={voiceURI} onChange={event => {stopPlayback(); setPlayback('idle'); setVoiceURI(event.target.value)}}>
+                <select value={voiceURI} onChange={event => {stopPlayback(); setPlayback('idle'); setHasAudioTrack(false); setUsingSpeechSynthesis(false); setAudioProgress({currentTime: 0, duration: 0}); setVoiceURI(event.target.value)}}>
                   <option value="audio">Voix neuronale · Piper</option>
                   {frenchVoices.map(voice => <option key={voice.voiceURI} value={voice.voiceURI}>{voice.name} ({voice.lang})</option>)}
                 </select>
