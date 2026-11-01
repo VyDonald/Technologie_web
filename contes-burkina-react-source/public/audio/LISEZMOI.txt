@@ -1,1 +1,2 @@
-Déposer ici les mp3 : <id>-<langue>-<n° scène>.mp3
+Chaque scène en français possède une piste MP3 générée localement avec la voix française d’eSpeak NG. Le lecteur les utilise par défaut et peut aussi utiliser une voix française installée dans le navigateur.
+Pour les autres langues, déposer les MP3 ici sous la forme : <id>-<langue en minuscules>-<n° scène>.mp3

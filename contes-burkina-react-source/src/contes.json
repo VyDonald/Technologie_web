@@ -3,7 +3,7 @@
   "id": "niamanto",
   "titre": "Niamanto",
   "region": "Guiriko",
-  "peuple": "Sénoufo",
+  "peuple": "Conte original",
   "lieu": "Orodara",
   "lat": 10.99,
   "lng": -4.91,
@@ -11,8 +11,8 @@
    "Dioula",
    "Français"
   ],
-  "source": "Recueil de Françoise Diep et F. M. Bamba (pays sénoufo)",
-  "statut": "Adaptation à valider",
+  "source": "Piste bibliographique : recueil de Françoise Diep et F. M. Bamba. Les scènes de cette fiche sont une création pour le prototype, pas une transcription du recueil.",
+  "statut": "Adaptation originale",
   "resume": "Au village, Niamanto reçoit une mission qui semble simple. Plutôt que de se précipiter, il observe, écoute les anciens et imagine une solution qui rassemble tout le monde. Cette adaptation met à l’honneur la réflexion et la parole partagée ; le récit et son attribution restent à confirmer auprès d’une source sénoufo.",
   "deco": {
    "sky": [
@@ -23,10 +23,11 @@
    "nuit": []
   },
   "scenes": [
-   "Un matin, les anciens confient à Niamanto une tâche qui paraît impossible : aider le village sans épuiser celles et ceux qui y travaillent.",
-   "Niamanto ne répond pas tout de suite. Il écoute les habitants, observe le chemin et remarque un passage oublié sous les herbes.",
-   "Avec les jeunes du village, il dégage le passage. Chacun apporte son aide, et le travail avance sans qu’il soit besoin de recourir à la force.",
-   "Les anciens remercient tout le monde. Niamanto comprend que réfléchir ensemble peut ouvrir un chemin là où l’on ne voyait qu’un obstacle."
+   "Un matin, les anciens confient à Niamanto une tâche qui paraît impossible : conduire jusqu’au village les paniers de mil restés de l’autre côté du marigot. Le soleil monte déjà, et le sentier habituel est devenu boueux après la pluie.",
+   "Les plus pressés proposent de porter les paniers un par un. Niamanto, lui, demande d’abord à chacun ce qu’il sait du terrain. Une vieille jardinière se souvient alors d’un passage de pierres, caché sous les herbes près des grands arbres.",
+   "Niamanto part reconnaître le chemin avec deux amis. Ils avancent prudemment, déplacent quelques branches et découvrent que les pierres forment une sorte de pont. Il n’est pas assez large pour tout le monde à la fois, mais il est assez solide pour les paniers.",
+   "Au lieu de tout faire seul, Niamanto organise une chaîne. Les uns passent les paniers, les autres les réceptionnent, et une personne reste près du marigot pour prévenir si le niveau de l’eau monte. Le travail devient plus léger parce que chacun sait quoi faire.",
+   "Quand le dernier panier arrive au village, les anciens remercient toute l’équipe. Niamanto comprend que sa meilleure idée n’était pas le passage de pierres : c’était d’avoir pris le temps d’écouter, puis d’avoir associé chacun à la solution."
   ],
   "quiz": {
    "q": "Que choisit Niamanto pour réussir ?",
@@ -43,7 +44,7 @@
   "id": "landolo",
   "titre": "Landolo et le grand caïlcédrat",
   "region": "Sourou",
-  "peuple": "San (Samo)",
+  "peuple": "Conte original",
   "lieu": "Tougan",
   "lat": 13.07,
   "lng": -3.07,
@@ -51,8 +52,8 @@
    "Samo",
    "Français"
   ],
-  "source": "Mariam Koné, 2006 (pays san)",
-  "statut": "Adaptation à valider",
+  "source": "Piste bibliographique : Mariam Koné, 2006. Les scènes de cette fiche sont une création pour le prototype, pas une transcription de ce recueil.",
+  "statut": "Adaptation originale",
   "resume": "Landolo veut abattre le grand caïlcédrat qui ombrage le chemin du village. En prenant le temps d’écouter les habitants, il découvre tout ce que l’arbre rend possible. Une adaptation sur le respect du vivant et la recherche d’un compromis ; sa version san reste à recueillir.",
   "deco": {
    "sky": [
@@ -63,10 +64,11 @@
    "nuit": []
   },
   "scenes": [
-   "À l’entrée du village, un grand caïlcédrat étend son ombre sur le chemin. Les passants s’y arrêtent pour se reposer et échanger des nouvelles.",
-   "Un jour, Landolo pense à couper l’arbre pour récupérer son bois. Il croit que personne n’en aura vraiment besoin.",
-   "Avant de prendre sa hache, il écoute les voisins : l’arbre protège les voyageurs du soleil, accueille les marchés et abrite les oiseaux.",
-   "Landolo renonce à l’abattre. Le village ramasse plutôt les branches tombées et décide ensemble de prendre soin de l’arbre."
+   "À l’entrée du village, un grand caïlcédrat étend son ombre sur le chemin. Les voyageurs s’y reposent, les enfants y attendent leurs amis, et les marchandes y installent parfois leurs paniers quand le soleil devient trop fort.",
+   "Un jour, Landolo pense à couper l’arbre pour réparer le toit de son atelier. Le bois lui serait bien utile, se dit-il, et il pourra toujours en planter un autre. Il sort sa hache avant d’en parler à quiconque.",
+   "Sa voisine l’arrête et lui demande de patienter jusqu’au soir. Sous les branches, elle lui montre les traces laissées par les animaux venus boire, puis les nids cachés dans le feuillage. D’autres habitants racontent à leur tour les souvenirs liés à cet arbre.",
+   "Landolo comprend que le caïlcédrat rend des services que personne ne peut remplacer en une journée. Il explique son besoin au village. Ensemble, ils trouvent du bois déjà tombé et réparent son toit sans abattre l’arbre.",
+   "Depuis, chacun veille sur le grand caïlcédrat. Landolo en ramasse les branches après les vents et transforme le bois sec en étagères. Il n’a pas renoncé à réparer son atelier : il a découvert une manière de le faire sans priver tout le village de son ombre."
   ],
   "quiz": {
    "q": "Que voulait faire Landolo de l’arbre ?",
@@ -83,7 +85,7 @@
   "id": "gazelle",
   "titre": "La Gazelle et le caméléon",
   "region": "Guiriko",
-  "peuple": "Bwa",
+  "peuple": "Conte original",
   "lieu": "Houndé",
   "lat": 11.5,
   "lng": -3.52,
@@ -92,8 +94,8 @@
    "Dioula",
    "Français"
   ],
-  "source": "Wabinlé Nabié, L’Harmattan, 2010 (contes bwaba)",
-  "statut": "Adaptation à valider",
+  "source": "Piste bibliographique : Wabinlé Nabié, L’Harmattan, 2010. Cette fable est une création pour le prototype et ne reproduit pas un conte bwaba du recueil.",
+  "statut": "Fable originale",
   "resume": "La gazelle se croit imbattable grâce à sa vitesse et accepte de courir contre le caméléon. Trop occupée à se vanter, elle oublie que la patience et la constance comptent aussi. Cette fable est une adaptation de travail ; son attribution bwa reste à vérifier.",
   "deco": {
    "sky": [
@@ -104,10 +106,11 @@
    "nuit": []
   },
   "scenes": [
-   "À la lisière de la brousse, la gazelle se vante : personne ne peut courir aussi vite qu’elle.",
-   "Le caméléon lui propose une course jusqu’au grand arbre. La gazelle éclate de rire, mais accepte le défi.",
-   "Au signal, la gazelle bondit devant. Sûre d’avoir gagné, elle s’arrête pour fanfaronner tandis que le caméléon avance sans se décourager.",
-   "Quand la gazelle repart, le caméléon a déjà atteint l’arbre. Elle découvre qu’aller vite ne suffit pas si l’on cesse d’avancer."
+   "À la lisière de la brousse, la gazelle se vante : personne ne peut courir aussi vite qu’elle. Le caméléon ne proteste pas. Il lui demande simplement si elle serait d’accord pour une course jusqu’au grand arbre, de l’autre côté de la clairière.",
+   "La gazelle éclate de rire, puis accepte. Les animaux choisissent le parcours et rappellent qu’il faudra suivre le sentier, même s’il tourne derrière les hautes herbes. Le caméléon demande seulement que le départ soit donné quand tout le monde sera prêt.",
+   "Au signal, la gazelle bondit et disparaît presque aussitôt. Convaincue qu’elle a gagné, elle s’arrête pour raconter à un groupe d’oiseaux combien sa course était facile. Pendant ce temps, le caméléon avance pas à pas sur le chemin.",
+   "La gazelle repart, prend de l’avance, puis s’arrête encore pour boire et se féliciter. Le caméléon continue sans courir, en faisant attention aux racines et aux pierres. Il ne cherche pas à aller plus vite que ses forces : il garde simplement la même direction.",
+   "Quand la gazelle arrive enfin au grand arbre, le caméléon l’attend déjà près de la ligne d’arrivée. La gazelle reconnaît sa victoire. Elle retient qu’un talent aide à commencer une course, mais que l’attention et la persévérance aident à la terminer."
   ],
   "quiz": {
    "q": "Qui gagne la course dans cette version ?",
@@ -124,7 +127,7 @@
   "id": "crapaud",
   "titre": "Pourquoi le crapaud chante la nuit ?",
   "region": "Liptako",
-  "peuple": "Songhaï",
+  "peuple": "Conte original",
   "lieu": "Gorom-Gorom",
   "lat": 14.44,
   "lng": -0.24,
@@ -133,8 +136,8 @@
    "Fulfuldé",
    "Français"
   ],
-  "source": "SAABU-France, L’Harmattan (contes songhaï)",
-  "statut": "Adaptation à valider",
+  "source": "Piste bibliographique : recueils de contes songhaï, dont ceux diffusés par SAABU-France et L’Harmattan. Cette histoire est une création pour le prototype, pas un récit songhaï recueilli.",
+  "statut": "Conte original",
   "resume": "Dans cette adaptation, le chant du crapaud résonne autrefois en plein jour et gêne les travaux du village. Une histoire étiologique, imaginée pour le prototype, qui invite à écouter les autres ; la version songhaï reste à recueillir.",
   "deco": {
    "sky": [
@@ -149,10 +152,11 @@
    ]
   },
   "scenes": [
-   "Il y a longtemps, le crapaud chantait dès le matin. Son chant couvrait les appels des voisins et les voix de celles et ceux qui travaillaient aux champs.",
-   "Les habitants lui demandent de faire une pause, mais le crapaud ne les entend pas. Le soir venu, ils confient leur souci à la lune.",
-   "La lune conseille au crapaud d’attendre que le village se repose. Il accepte d’essayer et garde sa chanson pour la nuit.",
-   "Depuis, son chant accompagne le calme du soir. Les habitants l’entendent sans qu’il couvre leurs conversations du jour."
+   "Il y a longtemps, le crapaud aimait chanter dès les premières heures du matin. Il chantait si fort que les voisines ne s’entendaient plus au puits et que les appels des cultivateurs se perdaient au-dessus des champs.",
+   "Un jour, plusieurs habitants viennent lui parler. Le crapaud croit qu’ils veulent entendre un nouveau refrain et recommence de plus belle. Il ne remarque pas les sourcils froncés ni les mains fatiguées de celles et ceux qui ont essayé de l’interrompre.",
+   "Le soir, une enfant s’assoit à distance et attend que le crapaud reprenne son souffle. Elle lui explique calmement ce qui se passe au village quand son chant couvre toutes les autres voix. Pour la première fois, le crapaud écoute jusqu’au bout.",
+   "La lune lui suggère d’essayer une autre heure. Le crapaud choisit la nuit, quand les travaux sont terminés et que les conversations se sont apaisées. Il garde sa chanson, mais il apprend à la partager avec le moment de la journée.",
+   "Depuis, son chant accompagne le calme du soir. Les habitants l’écoutent depuis leurs cours, et le crapaud reconnaît parfois, dans le silence qui suit, le chant discret des autres animaux."
   ],
   "quiz": {
    "q": "Quand le crapaud chante-t-il aujourd’hui ?",
@@ -169,7 +173,7 @@
   "id": "moose",
   "titre": "Le lièvre et l’arbre à palabres",
   "region": "Oubri",
-  "peuple": "Mossi",
+  "peuple": "Conte original",
   "lieu": "Ziniaré",
   "lat": 12.58,
   "lng": -1.3,
@@ -177,8 +181,8 @@
    "Mooré",
    "Français"
   ],
-  "source": "Alain-Joseph Sissao, Collection UNESCO",
-  "statut": "Adaptation à valider",
+  "source": "Piste bibliographique : Alain-Joseph Sissao, collection UNESCO. Cette histoire est une création pour le prototype autour d’un motif de palabre ; elle ne reproduit pas un conte précis du recueil.",
+  "statut": "Conte original",
   "resume": "Quand un désaccord divise le village, le lièvre propose de réunir chacun sous l’arbre à palabres. En posant les bonnes questions, il aide les habitants à trouver une solution ensemble. Cette adaptation autour du motif du lièvre rusé ne restitue pas un conte précis du recueil cité.",
   "deco": {
    "sky": [
@@ -189,10 +193,11 @@
    "nuit": []
   },
   "scenes": [
-   "Sous l’arbre à palabres, deux voisins se disputent à propos d’un champ. Chacun est certain d’avoir raison et personne ne veut céder.",
-   "Le lièvre propose de laisser parler les deux voisins, puis demande aux autres habitants ce qui aiderait tout le village.",
-   "En écoutant les réponses, les voisins comprennent qu’ils peuvent partager le passage qui longe le champ au lieu de se le disputer.",
-   "Le lièvre n’a pas imposé de décision : il a aidé chacun à entendre l’autre. Le village repart avec un accord et une histoire à raconter."
+   "Sous l’arbre à palabres, deux voisins se disputent à propos d’un étroit passage entre leurs champs. L’un dit qu’il l’a toujours utilisé pour rejoindre son jardin ; l’autre répond qu’il doit pouvoir transporter sa récolte par le même chemin.",
+   "Le lièvre propose de laisser chacun raconter sa journée, sans l’interrompre. Le premier voisin explique le détour qu’il ferait si le passage disparaissait. Le second décrit les paniers qu’il porte et la difficulté de traverser le champ après la pluie.",
+   "Au lieu de choisir un vainqueur, le lièvre demande aux personnes présentes ce qui pourrait convenir aux deux familles. Une jeune cultivatrice suggère d’élargir le sentier sur une petite bande de terrain, puis de replacer les pierres qui empêchent l’eau de raviner les cultures.",
+   "Les deux voisins vont voir le passage avec elle. Ils mesurent l’espace, déplacent quelques pierres et conviennent de réparer le chemin après chaque forte pluie. Chacun conserve l’accès à son champ sans gêner le travail de l’autre.",
+   "Le lièvre retourne s’asseoir sous l’arbre. Il n’a donné aucun ordre et n’a pas décidé à la place des voisins. Il leur a permis de s’écouter assez longtemps pour imaginer eux-mêmes une solution."
   ],
   "quiz": {
    "q": "Où les anciens racontent-ils l’histoire ?",
@@ -231,11 +236,12 @@
    ]
   },
   "scenes": [
-   "Yennenga, fille du roi, grandit parmi les chevaux. Elle devient une cavalière courageuse et prend part aux combats de son père.",
-   "Les années passent. Yennenga souhaite choisir sa propre voie, mais le roi refuse de la laisser partir et veut la garder auprès de lui.",
-   "Une nuit, elle quitte le royaume à cheval. Après un long voyage, elle rencontre Riale, un chasseur d’éléphants, qui l’accueille.",
-   "Yennenga et Riale fondent une famille. Leur fils reçoit le nom d’Ouedraogo, qui signifie « l’étalon » en mooré.",
-   "Dans la tradition mossi, Ouedraogo est associé aux origines du royaume. La légende de Yennenga se transmet en plusieurs versions, selon les conteurs."
+   "Yennenga grandit auprès des chevaux et apprend à les soigner, à les seller et à reconnaître leur humeur. Devenue cavalière, elle accompagne les guerriers de son père. On la respecte pour son courage, mais aussi pour sa connaissance des pistes et des animaux.",
+   "Les années passent. Après les campagnes, Yennenga rêve d’une vie où elle pourra faire ses propres choix. Elle en parle à son père, le roi. Celui-ci l’aime, mais il refuse de la laisser partir : il ne veut pas perdre sa fille et sa meilleure cavalière.",
+   "Yennenga attend une nuit calme et prépare son cheval. Elle quitte le royaume, traverse des chemins inconnus et s’éloigne des lieux où elle a grandi. Le voyage est long ; elle doit s’orienter, trouver de l’eau et laisser sa monture reprendre son souffle.",
+   "Au terme de son voyage, elle rencontre Riale, un chasseur d’éléphants. Il l’accueille et lui offre un endroit où se reposer. Yennenga lui raconte d’où elle vient et pourquoi elle a pris la route. Chacun découvre peu à peu la vie et les connaissances de l’autre.",
+   "Yennenga et Riale fondent une famille. Leur fils reçoit le nom d’Ouedraogo, qui signifie « l’étalon » en mooré, en souvenir du cheval qui a accompagné le voyage de sa mère.",
+   "Dans la tradition mossi, Ouedraogo est associé aux origines du royaume. Les conteurs transmettent la légende de Yennenga avec des variantes. Cette version est un résumé libre : elle ne remplace ni les récits oraux ni la parole des personnes qui les transmettent."
   ],
   "quiz": {
    "q": "Comment s’appelle le fils de Yennenga ?",
@@ -247,5 +253,256 @@
    "bon": 0
   },
   "audio": "audio/yennenga-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "cascade-banfora",
+  "titre": "Le sentier des trois cascades",
+  "region": "Guiriko",
+  "peuple": "Conte original",
+  "lieu": "Banfora",
+  "lat": 10.6333,
+  "lng": -4.7667,
+  "langues": [
+   "Français"
+  ],
+  "source": "Fiction originale écrite pour le prototype et située à Banfora ; elle ne prétend pas restituer une tradition locale.",
+  "statut": "Fiction originale",
+  "resume": "À Banfora, Aïcha accompagne sa tante sur le sentier des cascades. Après une forte pluie, un passage est bloqué et les visiteurs risquent de quitter le chemin. Avec trois amis, elle cherche une solution qui protège le sentier, les plantes et les visiteurs. Une aventure contemporaine sur l’attention et l’entraide.",
+  "deco": {
+   "sky": [
+    "#8BC9D4",
+    "#DBEACA"
+   ],
+   "fig": "arbre",
+   "nuit": []
+  },
+  "scenes": [
+   "À Banfora, Aïcha aime marcher tôt le matin avec sa tante Mariam. Elles connaissent le sentier qui mène aux cascades et saluent les familles qu’elles croisent. Après une nuit de pluie, elles découvrent qu’une branche s’est couchée en travers du chemin, juste avant le prochain virage.",
+   "Des visiteurs hésitent et commencent à chercher un passage entre les arbustes. Aïcha leur demande de patienter et de rester sur le sentier. Sa tante va prévenir les gardiens du site, tandis qu’Aïcha observe le sol pour comprendre si la branche peut être déplacée sans danger.",
+   "Trois amis arrivent avec des gants et une corde. Ils ne tirent pas tout de suite : ils vérifient d’abord que la branche ne retient pas une autre partie de l’arbre. Un gardien leur montre où s’installer. Ensemble, ils dégagent un passage assez large pour marcher sans piétiner les jeunes plantes.",
+   "Aïcha remarque que l’eau de pluie a creusé une petite rigole au milieu du sentier. Elle place quelques pierres sur les conseils du gardien pour guider l’eau vers le fossé déjà prévu. Les visiteurs peuvent reprendre leur marche, et personne n’a besoin de couper de nouvelles branches.",
+   "Avant de repartir, Aïcha et ses amis ramassent les petits déchets laissés près du chemin. Sa tante les remercie, mais leur rappelle que le site appartient à tout le monde : prendre soin du sentier doit devenir une habitude, pas une opération d’un seul matin.",
+   "Sur le chemin du retour, Aïcha comprend pourquoi sa tante avance sans se presser. Pour bien découvrir un lieu, il faut aussi regarder où l’on pose les pieds et ce que notre passage laisse derrière nous."
+  ],
+  "quiz": {
+   "q": "Pourquoi Aïcha demande-t-elle aux visiteurs de patienter ?",
+   "choix": [
+    "Pour dégager le sentier sans abîmer les plantes",
+    "Pour partir avant les visiteurs",
+    "Pour cacher l’entrée des cascades"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/cascade-banfora-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "velo-bobo",
+  "titre": "Le vélo bleu de Bobo",
+  "region": "Guiriko",
+  "peuple": "Conte original",
+  "lieu": "Bobo-Dioulasso",
+  "lat": 11.1771,
+  "lng": -4.2979,
+  "langues": [
+   "Français"
+  ],
+  "source": "Fiction originale écrite pour le prototype et située à Bobo-Dioulasso ; elle ne prétend pas restituer une tradition locale.",
+  "statut": "Fiction originale",
+  "resume": "À Bobo-Dioulasso, Karim trouve un vélo bleu oublié près de l’atelier de sa mère. Il voudrait le garder, mais une petite étiquette et quelques indices le conduisent à travers le quartier. Sa recherche l’amène à rencontrer plusieurs voisins et à comprendre qu’un objet retrouvé raconte parfois une histoire qui n’est pas la nôtre.",
+  "deco": {
+   "sky": [
+    "#F0A77A",
+    "#F6DEAD"
+   ],
+   "fig": "case",
+   "nuit": []
+  },
+  "scenes": [
+   "Karim passe ses vacances à Bobo-Dioulasso dans l’atelier de réparation de sa mère. Un après-midi, il aperçoit un vélo bleu appuyé contre le mur. La roue avant est dégonflée, et une petite étiquette attachée au guidon porte un prénom presque effacé.",
+   "Karim nettoie l’étiquette avec un chiffon. Il arrive à lire « Salif » et un numéro de rue. Il a toujours rêvé d’un vélo pour aller au terrain de jeu, mais il sait qu’un objet trouvé n’est pas un cadeau. Sa mère lui propose de chercher son propriétaire avant de toucher aux réparations.",
+   "Ils commencent par interroger la couturière de la rue, qui reconnaît le vélo. Elle se souvient qu’un garçon l’avait poussé sous la pluie en rentrant de l’école. Elle ne connaît pas son adresse, mais elle indique que sa famille tient parfois un petit étal près du marché.",
+   "Karim suit les indications et demande conseil aux commerçants. Un vendeur de fruits reconnaît le prénom et sait que Salif aide son grand-père après les cours. Karim n’entre pas dans la cour sans permission : il demande au vendeur de transmettre le message et attend une réponse.",
+   "Le lendemain, Salif vient récupérer le vélo avec son grand-père. La roue a été réparée par la mère de Karim, qui avait gardé le reçu des pièces. Salif lui rembourse la chambre à air, puis invite Karim à faire un tour avec lui.",
+   "Karim rentre à l’atelier content. Il n’a pas gagné un vélo, mais il a rencontré de nouveaux voisins et découvert un ami. Il se dit que rendre un objet, c’est parfois recevoir en retour une histoire qu’on n’aurait jamais connue autrement."
+  ],
+  "quiz": {
+   "q": "Que fait Karim lorsqu’il trouve le vélo ?",
+   "choix": [
+    "Il cherche son propriétaire",
+    "Il le garde sans rien dire",
+    "Il le vend au marché"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/velo-bobo-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "pagnes-dedougou",
+  "titre": "Le motif qui voyageait",
+  "region": "Sourou",
+  "peuple": "Conte original",
+  "lieu": "Dédougou",
+  "lat": 12.463,
+  "lng": -3.46,
+  "langues": [
+   "Français"
+  ],
+  "source": "Fiction originale écrite pour le prototype et située à Dédougou ; elle ne prétend pas restituer une tradition locale.",
+  "statut": "Fiction originale",
+  "resume": "À Dédougou, Aminata dessine un motif pour le panneau de la fête de l’école. Son premier dessin ne plaît à personne, puis les idées de ses camarades lui apprennent à composer une image où chacun peut se reconnaître. Une histoire d’imagination, de collaboration et de création partagée.",
+  "deco": {
+   "sky": [
+    "#E6A0A1",
+    "#F7D6AA"
+   ],
+   "fig": "case",
+   "nuit": []
+  },
+  "scenes": [
+   "À Dédougou, la classe d’Aminata prépare une exposition pour la fête de l’école. Chaque groupe doit dessiner un motif qui représentera son quartier. Aminata adore dessiner ; elle promet de créer un panneau si beau que personne n’aura besoin d’ajouter quoi que ce soit.",
+   "Elle passe l’après-midi à tracer des lignes compliquées. Le lendemain, ses camarades regardent le panneau sans rien reconnaître. L’un trouve les formes jolies mais trop serrées ; une autre aimerait voir le fleuve et les plantes du chemin. Aminata se sent vexée et veut tout recommencer seule.",
+   "La maîtresse propose de laisser chacun dessiner un détail sur une feuille séparée. Un élève dessine une porte ouverte, une autre un panier, un troisième un grand nuage après la pluie. Les dessins sont différents, mais chacun raconte un endroit où les enfants se retrouvent.",
+   "Aminata découpe les formes et les déplace sur une grande feuille. Elle garde un espace entre elles, comme un chemin qui relie les maisons au terrain de l’école. Les camarades discutent des couleurs, puis choisissent ensemble celles qui rendent le motif lisible de loin.",
+   "Le jour de l’exposition, les visiteurs s’approchent pour chercher les détails. Certains reconnaissent leur cour, d’autres imaginent leur propre chemin dans les formes. Aminata comprend que le panneau est plus intéressant parce qu’il ne raconte pas seulement son idée à elle.",
+   "Après la fête, la classe conserve le dessin dans la bibliothèque. Chaque enfant peut encore ajouter un détail au fil des mois. Le motif continue de voyager : il change un peu à chaque rencontre, sans perdre les souvenirs qui l’ont fait naître."
+  ],
+  "quiz": {
+   "q": "Qu’est-ce qui aide Aminata à terminer le motif ?",
+   "choix": [
+    "Les idées partagées de ses camarades",
+    "Un dessin copié dans un livre",
+    "Un concours de vitesse"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/pagnes-dedougou-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "puits-djibo",
+  "titre": "La dernière jarre du puits",
+  "region": "Liptako",
+  "peuple": "Conte original",
+  "lieu": "Djibo",
+  "lat": 14.1022,
+  "lng": -1.6306,
+  "langues": [
+   "Français"
+  ],
+  "source": "Fiction originale écrite pour le prototype et située à Djibo ; elle ne prétend pas restituer une tradition locale.",
+  "statut": "Fiction originale",
+  "resume": "Pendant une journée particulièrement chaude, Mariam voit que le niveau d’un puits de quartier a baissé. Avec les adultes, les enfants et les jardiniers, elle met au point une règle simple pour répartir l’eau et protéger le puits. Un récit d’entraide, à compléter avec les réalités et les voix locales.",
+  "deco": {
+   "sky": [
+    "#DB9A5A",
+    "#F2D596"
+   ],
+   "fig": "animal",
+   "nuit": [
+    2,
+    4
+   ]
+  },
+  "scenes": [
+   "À Djibo, Mariam accompagne son oncle jusqu’au puits du quartier. Ce matin-là, la corde remonte plus vite que d’habitude : la jarre n’est pas pleine. Les adultes vérifient le niveau et demandent aux familles de patienter pendant qu’ils cherchent à comprendre la situation.",
+   "Mariam aperçoit des traces de pas autour du rebord et plusieurs récipients oubliés au soleil. Elle propose de noter les heures où les familles viennent chercher de l’eau. Son oncle rappelle qu’une seule observation ne suffit pas : il faut écouter les personnes qui utilisent le puits chaque jour.",
+   "Les voisines et les jardiniers se réunissent à l’ombre. Ils expliquent leurs besoins et conviennent de donner la priorité à l’eau de boisson, sans oublier les animaux. Un adulte se charge de contacter la personne responsable de l’entretien du puits.",
+   "Avec l’accord des adultes, les enfants préparent une affiche claire : fermer le couvercle, ne pas laisser traîner les récipients et signaler tout changement inhabituel. Ils choisissent des dessins faciles à comprendre, même pour les plus jeunes.",
+   "Le lendemain, l’équipe d’entretien inspecte le puits. Les habitants appliquent leur organisation pendant qu’ils attendent les consignes. Mariam comprend que partager l’information permet de mieux s’organiser, mais que l’eau reste une responsabilité collective qui demande l’avis des personnes compétentes.",
+   "Le soir, son oncle remercie le quartier pour sa patience. Mariam range son carnet : il servira à suivre la situation, et non à remplacer l’expertise des adultes. Elle sait maintenant qu’une bonne idée commence souvent par une question posée à tout le monde."
+  ],
+  "quiz": {
+   "q": "Que font les habitants avant de modifier l’organisation du puits ?",
+   "choix": [
+    "Ils échangent sur leurs besoins et consultent l’équipe d’entretien",
+    "Ils ferment le puits pour toujours",
+    "Ils laissent les enfants décider seuls"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/puits-djibo-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "vent-koudougou",
+  "titre": "Les cerfs-volants de Koudougou",
+  "region": "Oubri",
+  "peuple": "Conte original",
+  "lieu": "Koudougou",
+  "lat": 12.25,
+  "lng": -2.36,
+  "langues": [
+   "Français"
+  ],
+  "source": "Fiction originale écrite pour le prototype et située à Koudougou ; elle ne prétend pas restituer une tradition locale.",
+  "statut": "Fiction originale",
+  "resume": "À Koudougou, Idrissa fabrique le plus grand cerf-volant du quartier pour une journée de jeux. Mais le vent emporte son projet et l’aide à comprendre qu’un cerf-volant n’est pas fait pour être tenu seul. Un récit de partage, de patience et d’invention.",
+  "deco": {
+   "sky": [
+    "#91C8E5",
+    "#F6E5B9"
+   ],
+   "fig": "animal",
+   "nuit": []
+  },
+  "scenes": [
+   "À Koudougou, Idrissa garde dans une boîte des morceaux de papier coloré et de fines baguettes. Pour la journée des jeux, il veut fabriquer un cerf-volant plus grand que tous ceux du quartier. Il choisit le rouge et le jaune, colle les panneaux et ajoute une longue queue.",
+   "Quand il sort dans le champ, le vent souffle par rafales. Son cerf-volant se soulève, tourne sur lui-même et retombe. Idrissa resserre le fil, puis tire plus fort. La baguette centrale se plie et un morceau de papier se déchire.",
+   "Sa voisine Awa lui propose de poser le cerf-volant au sol. Elle observe la structure et remarque que les baguettes ne sont pas équilibrées. Idrissa n’a pas envie de recommencer, mais Awa lui rappelle que les autres enfants sont venus avec leurs propres matériaux.",
+   "Ils réparent la déchirure ensemble. Un enfant apporte une baguette plus légère, un autre découpe une queue plus longue. Idrissa apprend à laisser un peu de mou dans le fil : le cerf-volant bouge avec le vent au lieu de lutter contre lui.",
+   "Au deuxième essai, le cerf-volant monte doucement. Plusieurs enfants tiennent la ficelle à tour de rôle. Quand une rafale arrive, ils se préviennent et lâchent un peu de fil ensemble. Le grand cerf-volant reste dans le ciel, stable et lumineux.",
+   "Idrissa rentre avec les mains couvertes de colle et le sourire aux lèvres. Son cerf-volant n’a pas volé parce qu’il était le plus grand, mais parce que chacun a apporté une idée et qu’ils ont appris à écouter le vent."
+  ],
+  "quiz": {
+   "q": "Qu’est-ce qui permet au cerf-volant de rester dans le ciel ?",
+   "choix": [
+    "Les ajustements et l’aide du groupe",
+    "Un fil toujours plus serré",
+    "Une queue en pierre"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/vent-koudougou-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "calebasse-fada",
+  "titre": "La calebasse aux graines",
+  "region": "Nakambé",
+  "peuple": "Conte original",
+  "lieu": "Fada N’Gourma",
+  "lat": 12.06,
+  "lng": 0.36,
+  "langues": [
+   "Français"
+  ],
+  "source": "Fiction originale écrite pour le prototype et située à Fada N’Gourma ; elle ne prétend pas restituer une tradition locale.",
+  "statut": "Fiction originale",
+  "resume": "Avant de partir en vacances, Binta reçoit une petite calebasse de graines de sa grand-mère à Fada N’Gourma. Elle veut toutes les semer le même jour, mais découvre qu’un jardin demande de l’observation, de la patience et des conseils. Un récit sur les gestes partagés et l’attention aux saisons.",
+  "deco": {
+   "sky": [
+    "#E99258",
+    "#F4D59A"
+   ],
+   "fig": "arbre",
+   "nuit": [
+    3
+   ]
+  },
+  "scenes": [
+   "À Fada N’Gourma, Binta accompagne sa grand-mère au jardin après la classe. Un soir, sa grand-mère lui confie une petite calebasse remplie de graines et lui explique qu’elles viennent de plusieurs plantes du jardin. Binta décide de toutes les semer avant son départ en vacances.",
+   "Le lendemain, elle creuse de nombreux trous et y verse toutes les graines. Sa grand-mère l’arrête doucement : chaque plante a besoin d’une place et d’une quantité d’eau différentes. Binta referme les trous et propose de commencer par observer les étiquettes attachées aux paniers.",
+   "Ensemble, elles trient les graines et choisissent une petite rangée. La grand-mère montre comment enfoncer une graine sans la casser et comment garder un passage pour arroser. Binta dessine un plan du jardin afin que son cousin puisse s’en occuper quand elle sera partie.",
+   "Les jours suivants, Binta note les changements : la terre sèche vite près du mur, tandis qu’un coin reste humide après l’ombre du matin. Elle demande conseil à sa grand-mère avant de changer l’arrosage. Son cousin ajoute lui aussi ses observations dans le carnet.",
+   "Après les vacances, de petites pousses ont grandi. Toutes les graines n’ont pas germé, mais la rangée est en bonne santé. Binta n’est pas déçue : le carnet lui apprend pourquoi certaines places étaient meilleures que d’autres.",
+   "La calebasse n’est pas vide pour longtemps. Binta y conserve les graines restantes, clairement étiquetées, pour une prochaine saison. Elle comprend que prendre soin d’un jardin, ce n’est pas se dépêcher de tout planter : c’est observer, demander conseil et transmettre ses notes."
+  ],
+  "quiz": {
+   "q": "Pourquoi Binta tient-elle un carnet avec son cousin ?",
+   "choix": [
+    "Pour noter leurs observations sur le jardin",
+    "Pour compter les nuages",
+    "Pour cacher les graines"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/calebasse-fada-<langue>-<n°scène>.mp3"
  }
 ]

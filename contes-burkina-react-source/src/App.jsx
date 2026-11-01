@@ -64,6 +64,11 @@ const FT = {
 
 const uniq = key => [...new Set(D.flatMap(conte => [].concat(conte[key])))].sort((a, b) => a.localeCompare(b, 'fr'))
 const asset = path => `${import.meta.env.BASE_URL}${path}`
+const MAP_LABELS = {
+  Orodara: {x: 16, y: 8, anchor: 'start'},
+  Banfora: {x: 18, y: 20, anchor: 'start'},
+  'Bobo-Dioulasso': {x: -16, y: -12, anchor: 'end'},
+}
 const star = (x, y, radius) => Array.from({length: 10}, (_, i) => {
   const angle = -Math.PI / 2 + i * Math.PI / 5
   const pointRadius = i % 2 ? radius * .382 : radius
@@ -112,9 +117,11 @@ function Carte({isVisible, selected}) {
     {D.map(conte => {
       const [x, y] = P(conte.lng, conte.lat)
       const visible = isVisible(conte)
+      const label = MAP_LABELS[conte.lieu] || {x: 18, y: 6, anchor: 'start'}
       return <a key={conte.id} href={`#conte-${conte.id}`} className={`pin${conte.id === selected ? ' selected' : ''}`}
         style={{opacity: visible ? 1 : .2, pointerEvents: visible ? 'auto' : 'none'}} aria-label={`Ouvrir ${conte.titre}`}>
-        <circle cx={x} cy={y} r="13"/><text x={x + 18} y={y + 6}>{conte.lieu}</text>
+        <circle cx={x} cy={y} r="13"/>
+        <text x={x + label.x} y={y + label.y} textAnchor={label.anchor}>{conte.lieu}</text>
       </a>
     })}
   </svg>
@@ -152,6 +159,7 @@ function Carton({conte}) {
       <span className="card-kicker">{conte.region} · {conte.lieu}</span>
       <h3>{conte.titre}</h3>
       <p>{conte.resume}</p>
+      <span className="story-status">{conte.statut}</span>
       <span className="card-more">Découvrir le récit <span aria-hidden="true">→</span></span>
     </div>
   </a>
@@ -160,23 +168,42 @@ function Carton({conte}) {
 function Lecteur({conte, close}) {
   const [index, setIndex] = useState(0)
   const [quiz, setQuiz] = useState(false)
-  const [language, setLanguage] = useState(conte.langues[0])
+  const [language, setLanguage] = useState(conte.langues.includes('Français') ? 'Français' : conte.langues[0])
   const [auto, setAuto] = useState(false)
   const [playback, setPlayback] = useState('idle')
   const [message, setMessage] = useState('')
   const [answer, setAnswer] = useState(null)
+  const [frenchVoices, setFrenchVoices] = useState([])
+  const [voiceURI, setVoiceURI] = useState('audio')
   const audioRef = useRef(null)
   const closeRef = useRef(null)
   const indexRef = useRef(index)
   const autoRef = useRef(auto)
   const quizRef = useRef(quiz)
   const moveSceneRef = useRef(null)
+  const playbackSessionRef = useRef(0)
+  const isOriginalFiction = conte.source.startsWith('Fiction originale')
   const last = conte.scenes.length - 1
   indexRef.current = index
   autoRef.current = auto
   quizRef.current = quiz
 
+  useEffect(() => {
+    if (!('speechSynthesis' in window)) return
+    const updateVoices = () => {
+      const voices = window.speechSynthesis.getVoices()
+        .filter(voice => /^fr([_-]|$)/i.test(voice.lang))
+        .sort((a, b) => Number(/[-_]FR$/i.test(b.lang)) - Number(/[-_]FR$/i.test(a.lang)))
+      setFrenchVoices(voices)
+      setVoiceURI(current => current === 'audio' || voices.some(voice => voice.voiceURI === current) ? current : 'audio')
+    }
+    updateVoices()
+    window.speechSynthesis.addEventListener('voiceschanged', updateVoices)
+    return () => window.speechSynthesis.removeEventListener('voiceschanged', updateVoices)
+  }, [])
+
   const stopPlayback = () => {
+    playbackSessionRef.current += 1
     const audio = audioRef.current
     if (audio) {
       audio.onended = null
@@ -188,7 +215,8 @@ function Lecteur({conte, close}) {
     if (window.speechSynthesis) window.speechSynthesis.cancel()
   }
 
-  const handleSceneEnd = () => {
+  const handleSceneEnd = session => {
+    if (session !== playbackSessionRef.current) return
     if (autoRef.current && indexRef.current < last) {
       setIndex(indexRef.current + 1)
     } else {
@@ -198,33 +226,73 @@ function Lecteur({conte, close}) {
 
   const playScene = () => {
     stopPlayback()
+    const session = playbackSessionRef.current
     setMessage('')
     setPlayback('playing')
-    let fallbackStarted = false
-    const useFallback = () => {
-      if (fallbackStarted) return
-      fallbackStarted = true
-      if (language === 'Français' && window.speechSynthesis && typeof SpeechSynthesisUtterance !== 'undefined') {
-        const utterance = new SpeechSynthesisUtterance(conte.scenes[index])
-        utterance.lang = 'fr-FR'
-        utterance.onend = handleSceneEnd
-        utterance.onerror = () => {
-          setPlayback('idle')
-          setMessage('La lecture vocale n’est pas disponible dans ce navigateur.')
-        }
-        window.speechSynthesis.speak(utterance)
-        setMessage('Lecture en français par synthèse vocale.')
-      } else {
+
+    const speakFrench = () => {
+      if (!('speechSynthesis' in window) || typeof window.SpeechSynthesisUtterance === 'undefined') {
         setPlayback('idle')
-        setMessage(`L’enregistrement en ${language} n’est pas encore disponible. Le texte reste consultable ci-dessus.`)
+        setMessage('La piste française est indisponible et ce navigateur ne prend pas en charge la synthèse vocale.')
+        return
+      }
+
+      const utterance = new window.SpeechSynthesisUtterance(conte.scenes[index])
+      const selectedVoice = frenchVoices.find(voice => voice.voiceURI === voiceURI)
+      const defaultFrenchVoice = frenchVoices.find(voice => /[-_]FR$/i.test(voice.lang)) || frenchVoices[0]
+      const voice = selectedVoice || defaultFrenchVoice
+      utterance.lang = voice?.lang || 'fr-FR'
+      utterance.voice = voice || null
+      utterance.rate = 0.94
+      utterance.onend = () => handleSceneEnd(session)
+      utterance.onerror = event => {
+        if (session !== playbackSessionRef.current || ['canceled', 'interrupted'].includes(event.error)) return
+        setPlayback('idle')
+        setMessage('La piste française est indisponible et la voix de synthèse de cet appareil a rencontré un problème.')
+      }
+      try {
+        window.speechSynthesis.speak(utterance)
+        setMessage(voice ? `Lecture en français avec la voix « ${voice.name} ».` : 'Lecture en français avec la voix de synthèse par défaut de ton appareil.')
+      } catch (error) {
+        setPlayback('idle')
+        setMessage(`Impossible de démarrer la synthèse vocale : ${error.message}`)
       }
     }
 
-    const audio = new Audio(asset(`audio/${conte.id}-${language.toLowerCase()}-${index + 1}.mp3`))
+    if (language === 'Français' && voiceURI !== 'audio') {
+      speakFrench()
+      return
+    }
+
+    const languageSlug = language === 'Français' ? 'francais' : language.toLowerCase()
+    const audio = new Audio(asset(`audio/${conte.id}-${languageSlug}-${index + 1}.mp3`))
+    let speechFallbackStarted = false
+    const fallBackToSpeech = () => {
+      if (speechFallbackStarted || session !== playbackSessionRef.current) return
+      speechFallbackStarted = true
+      if (audioRef.current === audio) audioRef.current = null
+      speakFrench()
+    }
     audioRef.current = audio
-    audio.onended = handleSceneEnd
-    audio.onerror = useFallback
-    audio.play().catch(useFallback)
+    audio.onended = () => handleSceneEnd(session)
+    audio.onerror = () => {
+      if (session !== playbackSessionRef.current) return
+      if (language === 'Français') {
+        fallBackToSpeech()
+        return
+      }
+      setPlayback('idle')
+      setMessage(`L’enregistrement en ${language} n’est pas encore disponible. Le texte reste consultable ci-dessus.`)
+    }
+    audio.play().catch(error => {
+      if (session !== playbackSessionRef.current) return
+      if (language === 'Français') {
+        fallBackToSpeech()
+        return
+      }
+      setPlayback('idle')
+      setMessage(`Impossible de lire l’enregistrement en ${language} : ${error.message}`)
+    })
   }
 
   useEffect(() => {
@@ -300,7 +368,9 @@ function Lecteur({conte, close}) {
           <div className="reader-story">
             <p className="scene-count">Scène {index + 1} <span>sur {conte.scenes.length}</span></p>
             <p className="reader-text" key={index}>{conte.scenes[index]}</p>
-            <p className="reader-note">Adaptation du projet · les versions en langues nationales restent à enregistrer.</p>
+            <p className="reader-note">{isOriginalFiction
+              ? `Fiction originale située à ${conte.lieu} · elle ne restitue pas une tradition locale recueillie.`
+              : 'Adaptation de travail · les versions orales et les enregistrements en langues nationales restent à recueillir.'}</p>
             <div className="reader-controls">
               <button className="control-button secondary" onClick={() => moveScene(-1)} disabled={index === 0}>← <span>Précédent</span></button>
               <button className="control-button primary" onClick={togglePlayback}>
@@ -312,9 +382,15 @@ function Lecteur({conte, close}) {
             <div className="reader-options">
               <label>Langue de lecture
                 <select value={language} onChange={event => {stopPlayback(); setPlayback('idle'); setLanguage(event.target.value)}}>
-                  {conte.langues.map(item => <option key={item}>{item}</option>)}
+                  {conte.langues.map(item => <option key={item} value={item}>{item === 'Français' ? item : `${item} · audio à venir`}</option>)}
                 </select>
               </label>
+              {language === 'Français' && frenchVoices.length > 0 && <label>Voix
+                <select value={voiceURI} onChange={event => {stopPlayback(); setPlayback('idle'); setVoiceURI(event.target.value)}}>
+                  <option value="audio">Narration du conte</option>
+                  {frenchVoices.map(voice => <option key={voice.voiceURI} value={voice.voiceURI}>{voice.name} ({voice.lang})</option>)}
+                </select>
+              </label>}
               <label className="auto-option"><input type="checkbox" checked={auto} onChange={event => setAuto(event.target.checked)}/> Enchaîner les scènes</label>
             </div>
             <p className="reader-status" aria-live="polite">{message}</p>
@@ -474,12 +550,12 @@ export default function App() {
         <div className="story-detail">
           <p className="eyebrow">{current.region} · {current.lieu}</p>
           <h1>{current.titre}</h1>
-          <p className="meta">Récit {current.peuple}</p>
+          <p className="meta">{current.peuple === 'Conte original' ? 'Récit original du prototype' : `Tradition orale ${current.peuple}`}</p>
           <div className="tag-list">{current.langues.map(language => <span className="tag" key={language}>{language}</span>)}
             <span className="tag status-tag">{current.statut}</span></div>
           <p className="story-summary">{current.resume}</p>
           <button className="button primary" onClick={() => setReaderOpen(true)}>Entrer dans l’histoire <span aria-hidden="true">→</span></button>
-          <p className="source-note"><strong>Repère documentaire :</strong> {current.source}</p>
+          <p className="source-note"><strong>Contexte et source :</strong> {current.source}</p>
         </div>
         {readerOpen && <Lecteur key={current.id} conte={current} close={() => setReaderOpen(false)}/>}
       </article>}
@@ -491,9 +567,9 @@ export default function App() {
           <p>Une petite bibliothèque numérique pour découvrir les récits et paysages du Burkina Faso.</p>
         </section>
         <div className="about-copy">
-          <h2>Des récits à faire vivre</h2>
-          <p>Les cinq premiers récits sont des adaptations originales de travail, à compléter et à faire valider avec des conteuses et conteurs. La légende de Yennenga est un résumé libre de la tradition orale mossi, qui connaît plusieurs variantes. Les textes ne remplacent ni les recueils cités ni la parole des détenteurs de ces récits.</p>
-          <p>Les enregistrements en langues nationales restent à réaliser. En attendant, le lecteur propose le texte et, en français, une synthèse vocale du navigateur lorsqu’elle est disponible.</p>
+          <h2>Des histoires à faire vivre</h2>
+          <p>La collection réunit douze récits situés dans douze localités du Burkina Faso. Plusieurs textes sont des adaptations originales de travail ; six nouvelles histoires sont explicitement signalées comme des fictions contemporaines et ne prétendent pas représenter les traditions des lieux. La légende de Yennenga est un résumé libre d’un récit oral qui connaît plusieurs variantes.</p>
+          <p>Les références bibliographiques indiquées sur certaines fiches sont des pistes de recherche, pas la source textuelle des scènes. Les textes sont à compléter et à faire relire avec des conteuses et conteurs. Les enregistrements en langues nationales restent à réaliser ; en français, le lecteur utilise les voix françaises disponibles sur l’appareil.</p>
           <h2>Crédits des photographies</h2>
           <ul className="credits-list">{Object.entries(REG).map(([region, details]) => <li key={region}>
             <strong>{region} — {details.landmark}</strong>
