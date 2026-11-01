@@ -1,0 +1,245 @@
+[
+ {
+  "id": "niamanto",
+  "titre": "Niamanto",
+  "region": "Guiriko",
+  "peuple": "Sénoufo",
+  "lieu": "Orodara",
+  "lat": 10.99,
+  "lng": -4.91,
+  "langues": [
+   "Dioula",
+   "Français"
+  ],
+  "source": "Recueil de Françoise Diep et F. M. Bamba (pays sénoufo)",
+  "statut": "À compléter",
+  "resume": "Un récit du pays sénoufo où une épreuve éprouve la ruse et la loyauté d’un personnage. Fiche à compléter avec la version recueillie auprès d’un conteur sénoufo.",
+  "deco": {
+   "sky": [
+    "#F2C46D",
+    "#F7E3B5"
+   ],
+   "fig": "case",
+   "nuit": []
+  },
+  "scenes": [
+   "Au village, Niamanto doit prouver sa valeur devant les anciens.",
+   "Pour réussir, il choisit la ruse plutôt que la force.",
+   "Les anciens retiennent la leçon : l’intelligence vaut mieux que la force."
+  ],
+  "quiz": {
+   "q": "Que choisit Niamanto pour réussir ?",
+   "choix": [
+    "La ruse",
+    "La force",
+    "La fuite"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/niamanto-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "landolo",
+  "titre": "Landolo et le grand caïlcédrat",
+  "region": "Sourou",
+  "peuple": "San (Samo)",
+  "lieu": "Tougan",
+  "lat": 13.07,
+  "lng": -3.07,
+  "langues": [
+   "Samo",
+   "Français"
+  ],
+  "source": "Mariam Koné, 2006 (pays san)",
+  "statut": "À compléter",
+  "resume": "Autour d’un grand caïlcédrat, arbre souvent sacré, ce conte du pays san interroge le respect dû à la nature et aux anciens. Résumé provisoire à remplacer par une version recueillie.",
+  "deco": {
+   "sky": [
+    "#9CD3E6",
+    "#E5F2D8"
+   ],
+   "fig": "arbre",
+   "nuit": []
+  },
+  "scenes": [
+   "À l’entrée du village se dresse un grand caïlcédrat que tous respectent.",
+   "Un jour, Landolo veut l’abattre pour son bois.",
+   "Il comprend que l’arbre protège tout le village, et il y renonce."
+  ],
+  "quiz": {
+   "q": "Que voulait faire Landolo de l’arbre ?",
+   "choix": [
+    "L’abattre",
+    "Le planter",
+    "Le vendre au marché"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/landolo-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "gazelle",
+  "titre": "La Gazelle et le caméléon",
+  "region": "Guiriko",
+  "peuple": "Bwa",
+  "lieu": "Houndé",
+  "lat": 11.5,
+  "lng": -3.52,
+  "langues": [
+   "Bwamu",
+   "Dioula",
+   "Français"
+  ],
+  "source": "Wabinlé Nabié, L’Harmattan, 2010 (contes bwaba)",
+  "statut": "À compléter",
+  "resume": "Un conte d’animaux bwa qui oppose la vitesse de la gazelle à la patience du caméléon. Résumé provisoire à remplacer par une version recueillie.",
+  "deco": {
+   "sky": [
+    "#BFE3F0",
+    "#F1EBC9"
+   ],
+   "fig": "animal",
+   "nuit": []
+  },
+  "scenes": [
+   "La gazelle se vante d’être la plus rapide de la brousse.",
+   "Le caméléon, tranquille, lui propose une course.",
+   "Il avance sans jamais s’arrêter, et la gazelle distraite perd la course."
+  ],
+  "quiz": {
+   "q": "Qui gagne la course dans cette version ?",
+   "choix": [
+    "Le caméléon",
+    "La gazelle",
+    "Personne"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/gazelle-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "crapaud",
+  "titre": "Pourquoi le crapaud chante la nuit ?",
+  "region": "Liptako",
+  "peuple": "Songhaï",
+  "lieu": "Gorom-Gorom",
+  "lat": 14.44,
+  "lng": -0.24,
+  "langues": [
+   "Songhaï",
+   "Fulfuldé",
+   "Français"
+  ],
+  "source": "SAABU-France, L’Harmattan (contes songhaï)",
+  "statut": "À compléter",
+  "resume": "Un conte étiologique songhaï qui explique pourquoi le crapaud chante dans la nuit. Résumé provisoire à remplacer par la version recueillie.",
+  "deco": {
+   "sky": [
+    "#1B2A4A",
+    "#3B4F6B"
+   ],
+   "fig": "animal",
+   "nuit": [
+    0,
+    1,
+    2
+   ]
+  },
+  "scenes": [
+   "Il y a longtemps, le crapaud chantait en plein jour et personne ne pouvait travailler.",
+   "Les villageois se plaignent à la lune.",
+   "Depuis ce jour, le crapaud chante la nuit, quand chacun peut l’écouter de loin."
+  ],
+  "quiz": {
+   "q": "Quand le crapaud chante-t-il aujourd’hui ?",
+   "choix": [
+    "La nuit",
+    "À midi",
+    "Au lever du soleil"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/crapaud-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "moose",
+  "titre": "Contes du pays des Moose",
+  "region": "Oubri",
+  "peuple": "Mossi",
+  "lieu": "Ziniaré",
+  "lat": 12.58,
+  "lng": -1.3,
+  "langues": [
+   "Mooré",
+   "Français"
+  ],
+  "source": "Alain-Joseph Sissao, Collection UNESCO",
+  "statut": "À compléter",
+  "resume": "Recueil de récits mossi (animaux, sagesse, vie du village). Choisir un récit précis du recueil puis rédiger votre propre adaptation.",
+  "deco": {
+   "sky": [
+    "#F4A66A",
+    "#F9D9A0"
+   ],
+   "fig": "arbre",
+   "nuit": []
+  },
+  "scenes": [
+   "Sous l’arbre à palabres, les anciens racontent une histoire de ruse.",
+   "Le lièvre, petit mais malin, déjoue plus fort que lui.",
+   "Chacun repart avec une leçon de sagesse."
+  ],
+  "quiz": {
+   "q": "Où les anciens racontent-ils l’histoire ?",
+   "choix": [
+    "Sous l’arbre à palabres",
+    "Au bord du fleuve",
+    "Dans un champ"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/moose-<langue>-<n°scène>.mp3"
+ },
+ {
+  "id": "yennenga",
+  "titre": "La légende de la princesse Yennenga",
+  "region": "Nakambé",
+  "peuple": "Mossi",
+  "lieu": "Tenkodogo",
+  "lat": 11.78,
+  "lng": -0.37,
+  "langues": [
+   "Mooré",
+   "Français"
+  ],
+  "source": "Tradition orale mossi",
+  "statut": "Résumé rédigé",
+  "resume": "Fille d’un roi, Yennenga est une cavalière redoutable. Son père refuse de la marier. Elle s’enfuit à cheval, rencontre Riale, un chasseur d’éléphants, et leur fils Ouedraogo, « l’étalon », est l’ancêtre des rois mossi.",
+  "deco": {
+   "sky": [
+    "#E88B5A",
+    "#F6D49A"
+   ],
+   "fig": "cavalier",
+   "nuit": [
+    2
+   ]
+  },
+  "scenes": [
+   "Yennenga, fille du roi, galope aussi bien que les meilleurs guerriers.",
+   "Son père refuse de la marier : il veut la garder près de lui.",
+   "Une nuit, elle s’enfuit à cheval et rencontre Riale, un chasseur d’éléphants.",
+   "De leur union naît Ouedraogo, « l’étalon », ancêtre des rois mossi."
+  ],
+  "quiz": {
+   "q": "Comment s’appelle le fils de Yennenga ?",
+   "choix": [
+    "Ouedraogo",
+    "Riale",
+    "Wubri"
+   ],
+   "bon": 0
+  },
+  "audio": "audio/yennenga-<langue>-<n°scène>.mp3"
+ }
+]
