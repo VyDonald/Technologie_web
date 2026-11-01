@@ -441,7 +441,7 @@ function Lecteur({conte, close, initialIndex = 0}) {
               </label>
               {language === 'Français' && frenchVoices.length > 0 && <label>Voix
                 <select value={voiceURI} onChange={event => {stopPlayback(); setPlayback('idle'); setVoiceURI(event.target.value)}}>
-                  <option value="audio">Narration du conte</option>
+                  <option value="audio">Voix neuronale · Piper</option>
                   {frenchVoices.map(voice => <option key={voice.voiceURI} value={voice.voiceURI}>{voice.name} ({voice.lang})</option>)}
                 </select>
               </label>}

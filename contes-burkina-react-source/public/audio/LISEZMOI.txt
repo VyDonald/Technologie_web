@@ -1,2 +1,4 @@
-Chaque scène en français possède une piste MP3 générée localement avec la voix française d’eSpeak NG. Le lecteur les utilise par défaut et peut aussi utiliser une voix française installée dans le navigateur.
+Chaque scène en français possède une piste MP3 générée localement avec la voix neuronale française Piper fr_FR-siwis-medium. Il s’agit d’une voix de synthèse, pas d’un enregistrement de conteuse ou conteur. Le lecteur utilise ces pistes par défaut et peut aussi utiliser une voix française installée dans le navigateur.
+Crédit de la voix : Piper Voices, modèle SIWIS, corpus sous licence CC BY 4.0. Modèle : https://huggingface.co/rhasspy/piper-voices/tree/v1.0.0/fr/fr_FR/siwis/medium
+Corpus : https://datashare.is.ed.ac.uk/handle/10283/2353
 Pour les autres langues, déposer les MP3 ici sous la forme : <id>-<langue en minuscules>-<n° scène>.mp3
