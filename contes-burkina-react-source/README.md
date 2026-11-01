@@ -13,6 +13,11 @@ Le site est disponible sur `http://localhost:5173`. La compilation produit le si
 ## Déployer sur Vercel
 Importer ce dossier sur vercel.com/new (Vite est détecté automatiquement), ou : npx vercel --prod
 
+## Hébergement GitHub Pages
+Le workflow `.github/workflows/deploy-pages.yml` publie automatiquement l’application sur GitHub Pages après chaque mise à jour de `main`. Le site sera accessible à l’adresse :
+
+https://vydonald.github.io/Technologie_web/
+
 ## Ajouter du contenu
 - Textes, quiz, coordonnées : src/contes.json
 - Photos des régions : public/regions/<sindou|mouhoun|sahel|laongo|tenkodogo>.jpg
