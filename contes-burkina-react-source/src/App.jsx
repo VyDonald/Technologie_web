@@ -1,5 +1,6 @@
-import {useEffect, useId, useRef, useState} from 'react'
+import {useEffect, useId, useMemo, useRef, useState} from 'react'
 import D from './contes.json'
+import Atlas3D from './Atlas3D.jsx'
 import {art} from './art.js'
 import {BFA, VB, P} from './bfa.js'
 
@@ -165,8 +166,61 @@ function Carton({conte}) {
   </a>
 }
 
-function Lecteur({conte, close}) {
-  const [index, setIndex] = useState(0)
+function StoryJourney({conte, onListen}) {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const chapterRefs = useRef([])
+
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) return undefined
+    const observer = new IntersectionObserver(entries => {
+      const activeChapter = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+      if (activeChapter) setActiveIndex(Number(activeChapter.target.dataset.sceneIndex))
+    }, {threshold: [.15, .35, .6], rootMargin: '-18% 0px -28% 0px'})
+    chapterRefs.current.forEach(chapter => chapter && observer.observe(chapter))
+    return () => observer.disconnect()
+  }, [conte.id])
+
+  return <section className="story-journey" aria-label={`Récit illustré : ${conte.titre}`}>
+    <header className="journey-heading">
+      <p className="eyebrow">LE RÉCIT, SCÈNE APRÈS SCÈNE</p>
+      <h2>Faites défiler l’histoire</h2>
+      <p>Les paysages évoluent avec le récit. Prenez le temps de lire, ou écoutez une scène.</p>
+    </header>
+    <div className="journey-layout">
+      <aside className="journey-visual" aria-label={`Illustration de la scène ${activeIndex + 1}`}>
+        <div className="journey-visual-frame" key={`${conte.id}-${activeIndex}`}
+          dangerouslySetInnerHTML={{__html: art(conte, activeIndex, 'journey-active')}}/>
+        <div className="journey-visual-meta">
+          <span>SCÈNE {String(activeIndex + 1).padStart(2, '0')} / {String(conte.scenes.length).padStart(2, '0')}</span>
+          <span>{conte.region} · {conte.lieu}</span>
+        </div>
+        <button className="journey-listen" type="button" onClick={() => onListen(activeIndex)}>
+          <span aria-hidden="true">▶</span> Écouter cette scène
+        </button>
+        <div className="journey-progress" aria-hidden="true">
+          <span style={{width: `${((activeIndex + 1) / conte.scenes.length) * 100}%`}}/>
+        </div>
+      </aside>
+      <div className="journey-chapters">
+        {conte.scenes.map((scene, index) => <article key={index} ref={element => {chapterRefs.current[index] = element}}
+          className={`journey-chapter${index === activeIndex ? ' is-active' : ''}`} data-scene-index={index}>
+          <div className="journey-mobile-art" aria-hidden="true" dangerouslySetInnerHTML={{__html: art(conte, index, `journey-chapter-${index}`)}}/>
+          <p className="journey-scene-label"><span>{String(index + 1).padStart(2, '0')}</span> · SCÈNE</p>
+          <p className="journey-scene-text">{scene}</p>
+          <button className="journey-scene-listen" type="button" onClick={() => onListen(index)}>
+            Écouter cette scène <span aria-hidden="true">↗</span>
+          </button>
+        </article>)}
+      </div>
+    </div>
+    <p className="journey-voice-note">Les pistes françaises utilisent une voix de synthèse. Les versions en langues nationales sont à recueillir auprès de conteuses et conteurs, avec leur accord et leurs crédits.</p>
+  </section>
+}
+
+function Lecteur({conte, close, initialIndex = 0}) {
+  const [index, setIndex] = useState(initialIndex)
   const [quiz, setQuiz] = useState(false)
   const [language, setLanguage] = useState(conte.langues.includes('Français') ? 'Français' : conte.langues[0])
   const [auto, setAuto] = useState(false)
@@ -364,7 +418,7 @@ function Lecteur({conte, close}) {
       </div>
       <div className="reader-content">
         {!quiz ? <>
-          <div className="reader-scene-art" dangerouslySetInnerHTML={{__html: art(conte, index)}}/>
+          <div className="reader-scene-art" dangerouslySetInnerHTML={{__html: art(conte, index, 'reader')}}/>
           <div className="reader-story">
             <p className="scene-count">Scène {index + 1} <span>sur {conte.scenes.length}</span></p>
             <p className="reader-text" key={index}>{conte.scenes[index]}</p>
@@ -421,6 +475,7 @@ export default function App() {
   const [filters, setFilters] = useState({region: '', language: ''})
   const [search, setSearch] = useState('')
   const [readerOpen, setReaderOpen] = useState(false)
+  const [readerStart, setReaderStart] = useState(0)
   const [selectedId, setSelectedId] = useState(D[0].id)
 
   useEffect(() => {
@@ -436,10 +491,14 @@ export default function App() {
     && (!filters.language || conte.langues.includes(filters.language))
     && (!search || [conte.titre, conte.resume, conte.region, conte.lieu, conte.peuple]
       .join(' ').toLocaleLowerCase('fr').includes(search.toLocaleLowerCase('fr')))
-  const filteredStories = D.filter(visible)
+  const filteredStories = useMemo(() => D.filter(visible), [filters, search])
   const current = hash.startsWith('conte-') && D.find(conte => conte.id === hash.slice(6))
   const nav = [['accueil', 'Accueil'], ['carte', 'Carte'], ['contes', 'Contes'], ['apropos', 'À propos']]
   const selected = D.find(conte => conte.id === selectedId && visible(conte)) || filteredStories[0]
+  const openReader = sceneIndex => {
+    setReaderStart(sceneIndex)
+    setReaderOpen(true)
+  }
 
   return <>
     <header className="site-header">
@@ -474,10 +533,8 @@ export default function App() {
               <div><dt>Langues</dt><dd>{uniq('langues').length.toString().padStart(2, '0')}</dd></div>
             </dl>
           </div>
-          <div className="hero-visual">
-            <Paysage region="Guiriko"/>
-            <div className="hero-map"><Carte isVisible={() => true} selected={null}/></div>
-            <p className="hero-caption">Des histoires ancrées dans leurs territoires</p>
+          <div className="hero-visual hero-visual-atlas">
+            <Atlas3D stories={D} selectedId={selected?.id || D[0].id} onSelect={setSelectedId}/>
           </div>
         </section>
 
@@ -512,7 +569,15 @@ export default function App() {
         </section>
         <Filtres filters={filters} setFilters={setFilters} search={search} setSearch={setSearch}/>
         <div className="cg">
-          <div className="map-panel"><Carte isVisible={visible} selected={selected?.id}/><p className="map-hint">Sélectionnez un repère pour découvrir son histoire.</p></div>
+          <div className="map-atlas-panel">
+            {filteredStories.length
+              ? <Atlas3D stories={filteredStories} selectedId={selected?.id || filteredStories[0].id} onSelect={setSelectedId}/>
+              : <p className="empty-state">Aucun récit ne correspond à ces filtres.</p>}
+            <details className="map-2d-details">
+              <summary>Afficher aussi la carte 2D</summary>
+              <div className="map-panel"><Carte isVisible={visible} selected={selected?.id}/><p className="map-hint">Sélectionnez un repère pour découvrir son histoire.</p></div>
+            </details>
+          </div>
           <div className="map-details">
             {selected ? <article className="fiche">
               <Paysage region={selected.region}/>
@@ -554,11 +619,12 @@ export default function App() {
           <div className="tag-list">{current.langues.map(language => <span className="tag" key={language}>{language}</span>)}
             <span className="tag status-tag">{current.statut}</span></div>
           <p className="story-summary">{current.resume}</p>
-          <button className="button primary" onClick={() => setReaderOpen(true)}>Entrer dans l’histoire <span aria-hidden="true">→</span></button>
+          <button className="button primary" onClick={() => openReader(0)}>Entrer dans l’histoire <span aria-hidden="true">→</span></button>
           <p className="source-note"><strong>Contexte et source :</strong> {current.source}</p>
         </div>
-        {readerOpen && <Lecteur key={current.id} conte={current} close={() => setReaderOpen(false)}/>}
+        {readerOpen && <Lecteur key={`${current.id}-${readerStart}`} conte={current} initialIndex={readerStart} close={() => setReaderOpen(false)}/>}
       </article>}
+      {current && <StoryJourney key={current.id} conte={current} onListen={openReader}/>}
 
       {hash === 'apropos' && <article className="about-page">
         <section className="page-intro">
@@ -569,7 +635,7 @@ export default function App() {
         <div className="about-copy">
           <h2>Des histoires à faire vivre</h2>
           <p>La collection réunit douze récits situés dans douze localités du Burkina Faso. Plusieurs textes sont des adaptations originales de travail ; six nouvelles histoires sont explicitement signalées comme des fictions contemporaines et ne prétendent pas représenter les traditions des lieux. La légende de Yennenga est un résumé libre d’un récit oral qui connaît plusieurs variantes.</p>
-          <p>Les références bibliographiques indiquées sur certaines fiches sont des pistes de recherche, pas la source textuelle des scènes. Les textes sont à compléter et à faire relire avec des conteuses et conteurs. Les enregistrements en langues nationales restent à réaliser ; en français, le lecteur utilise les voix françaises disponibles sur l’appareil.</p>
+          <p>Les références bibliographiques indiquées sur certaines fiches sont des pistes de recherche, pas la source textuelle des scènes. Les textes sont à compléter et à faire relire avec des conteuses et conteurs. Les pistes françaises sont générées avec une voix de synthèse ; les versions en langues nationales restent à enregistrer avec des locuteurs et locutrices, leur accord et leurs crédits.</p>
           <h2>Crédits des photographies</h2>
           <ul className="credits-list">{Object.entries(REG).map(([region, details]) => <li key={region}>
             <strong>{region} — {details.landmark}</strong>

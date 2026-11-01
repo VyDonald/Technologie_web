@@ -5,8 +5,12 @@ export const esc = value => String(value).replace(/[&<>"]/g, character => ({
   '"': '&quot;',
 }[character]))
 
-export function art(conte, sceneIndex) {
+export function art(conte, sceneIndex, instance = 'scene') {
   const {deco} = conte
+  const sceneId = `${conte.id}-${sceneIndex}-${instance}`.replace(/[^a-zA-Z0-9_-]/g, '')
+  const skyGradientId = `scene-sky-${sceneId}`
+  const glowGradientId = `scene-glow-${sceneId}`
+  const groundGradientId = `scene-ground-${sceneId}`
   const night = deco.nuit.includes(sceneIndex)
   const sky = night ? ['#172444', '#465674'] : deco.sky
   const figureX = 64 + (sceneIndex % 4) * 70
@@ -64,24 +68,24 @@ export function art(conte, sceneIndex) {
 
   return `<svg class="scene-art-svg" style="--ac:${accent};--land:${land}" viewBox="0 0 400 240" role="img" aria-label="Illustration animée : ${esc(conte.titre)}">
     <defs>
-      <linearGradient id="scene-sky" x1="0" y1="0" x2="0" y2="1">
+      <linearGradient id="${skyGradientId}" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-color="${sky[0]}"/><stop offset="1" stop-color="${sky[1]}"/>
       </linearGradient>
-      <linearGradient id="scene-ground" x1="0" y1="0" x2="0" y2="1">
+      <linearGradient id="${groundGradientId}" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-color="var(--land)"/><stop offset="1" stop-color="#29382B"/>
       </linearGradient>
-      <radialGradient id="scene-glow">
+      <radialGradient id="${glowGradientId}">
         <stop offset="0" stop-color="#FFF8D6" stop-opacity=".5"/><stop offset="1" stop-color="#FFF8D6" stop-opacity="0"/>
       </radialGradient>
     </defs>
-    <rect width="400" height="240" fill="url(#scene-sky)"/>
-    <circle class="scene-depth scene-depth--far scene-glow" cx="315" cy="58" r="58" fill="url(#scene-glow)"/>
+    <rect width="400" height="240" fill="url(#${skyGradientId})"/>
+    <circle class="scene-depth scene-depth--far scene-glow" cx="315" cy="58" r="58" fill="url(#${glowGradientId})"/>
     <g class="scene-depth scene-depth--far">${skyDetails}</g>
     <g class="scene-depth scene-depth--middle">
       <path d="M-25 168 Q60 121 132 159 T280 152 T430 153 V240 H-25Z" style="fill:var(--ac);opacity:.36"/>
       <path d="M-20 192 Q68 163 156 185 T324 175 T423 188 V240 H-20Z" fill="#5B7147" opacity=".78"/>
     </g>
-    <path d="M0 192 Q92 177 193 192 T400 187 V240 H0Z" fill="url(#scene-ground)"/>
+    <path d="M0 192 Q92 177 193 192 T400 187 V240 H0Z" fill="url(#${groundGradientId})"/>
     ${subject}
     <g class="scene-depth scene-depth--front scene-grass">
       <path d="M14 229 l7 -22 l2 22 M37 232 l11 -28 l-2 28 M363 233 l-8 -25 l-1 25 M386 231 l-12 -23 l3 23" fill="none" stroke="#D1B66D" stroke-width="3" stroke-linecap="round" opacity=".85"/>
