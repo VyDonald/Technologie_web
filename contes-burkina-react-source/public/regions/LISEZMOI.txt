@@ -1,1 +1,2 @@
-Déposez ici les photos des régions : sindou.jpg, mouhoun.jpg, sahel.jpg, laongo.jpg, tenkodogo.jpg (16:9 conseillé). Elles remplacent automatiquement les illustrations.
+Les photos des cinq régions sont déjà présentes dans ce dossier. Leurs crédits et licences sont indiqués dans ATTRIBUTIONS.md.
+Pour remplacer une photo, conservez son nom de fichier : sindou.jpg, mouhoun.jpg, sahel.jpg, laongo.jpg ou tenkodogo.jpg.

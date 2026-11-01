@@ -12,8 +12,8 @@
    "Français"
   ],
   "source": "Recueil de Françoise Diep et F. M. Bamba (pays sénoufo)",
-  "statut": "À compléter",
-  "resume": "Un récit du pays sénoufo où une épreuve éprouve la ruse et la loyauté d’un personnage. Fiche à compléter avec la version recueillie auprès d’un conteur sénoufo.",
+  "statut": "Adaptation à valider",
+  "resume": "Au village, Niamanto reçoit une mission qui semble simple. Plutôt que de se précipiter, il observe, écoute les anciens et imagine une solution qui rassemble tout le monde. Cette adaptation met à l’honneur la réflexion et la parole partagée ; le récit et son attribution restent à confirmer auprès d’une source sénoufo.",
   "deco": {
    "sky": [
     "#F2C46D",
@@ -23,9 +23,10 @@
    "nuit": []
   },
   "scenes": [
-   "Au village, Niamanto doit prouver sa valeur devant les anciens.",
-   "Pour réussir, il choisit la ruse plutôt que la force.",
-   "Les anciens retiennent la leçon : l’intelligence vaut mieux que la force."
+   "Un matin, les anciens confient à Niamanto une tâche qui paraît impossible : aider le village sans épuiser celles et ceux qui y travaillent.",
+   "Niamanto ne répond pas tout de suite. Il écoute les habitants, observe le chemin et remarque un passage oublié sous les herbes.",
+   "Avec les jeunes du village, il dégage le passage. Chacun apporte son aide, et le travail avance sans qu’il soit besoin de recourir à la force.",
+   "Les anciens remercient tout le monde. Niamanto comprend que réfléchir ensemble peut ouvrir un chemin là où l’on ne voyait qu’un obstacle."
   ],
   "quiz": {
    "q": "Que choisit Niamanto pour réussir ?",
@@ -51,8 +52,8 @@
    "Français"
   ],
   "source": "Mariam Koné, 2006 (pays san)",
-  "statut": "À compléter",
-  "resume": "Autour d’un grand caïlcédrat, arbre souvent sacré, ce conte du pays san interroge le respect dû à la nature et aux anciens. Résumé provisoire à remplacer par une version recueillie.",
+  "statut": "Adaptation à valider",
+  "resume": "Landolo veut abattre le grand caïlcédrat qui ombrage le chemin du village. En prenant le temps d’écouter les habitants, il découvre tout ce que l’arbre rend possible. Une adaptation sur le respect du vivant et la recherche d’un compromis ; sa version san reste à recueillir.",
   "deco": {
    "sky": [
     "#9CD3E6",
@@ -62,9 +63,10 @@
    "nuit": []
   },
   "scenes": [
-   "À l’entrée du village se dresse un grand caïlcédrat que tous respectent.",
-   "Un jour, Landolo veut l’abattre pour son bois.",
-   "Il comprend que l’arbre protège tout le village, et il y renonce."
+   "À l’entrée du village, un grand caïlcédrat étend son ombre sur le chemin. Les passants s’y arrêtent pour se reposer et échanger des nouvelles.",
+   "Un jour, Landolo pense à couper l’arbre pour récupérer son bois. Il croit que personne n’en aura vraiment besoin.",
+   "Avant de prendre sa hache, il écoute les voisins : l’arbre protège les voyageurs du soleil, accueille les marchés et abrite les oiseaux.",
+   "Landolo renonce à l’abattre. Le village ramasse plutôt les branches tombées et décide ensemble de prendre soin de l’arbre."
   ],
   "quiz": {
    "q": "Que voulait faire Landolo de l’arbre ?",
@@ -91,8 +93,8 @@
    "Français"
   ],
   "source": "Wabinlé Nabié, L’Harmattan, 2010 (contes bwaba)",
-  "statut": "À compléter",
-  "resume": "Un conte d’animaux bwa qui oppose la vitesse de la gazelle à la patience du caméléon. Résumé provisoire à remplacer par une version recueillie.",
+  "statut": "Adaptation à valider",
+  "resume": "La gazelle se croit imbattable grâce à sa vitesse et accepte de courir contre le caméléon. Trop occupée à se vanter, elle oublie que la patience et la constance comptent aussi. Cette fable est une adaptation de travail ; son attribution bwa reste à vérifier.",
   "deco": {
    "sky": [
     "#BFE3F0",
@@ -102,9 +104,10 @@
    "nuit": []
   },
   "scenes": [
-   "La gazelle se vante d’être la plus rapide de la brousse.",
-   "Le caméléon, tranquille, lui propose une course.",
-   "Il avance sans jamais s’arrêter, et la gazelle distraite perd la course."
+   "À la lisière de la brousse, la gazelle se vante : personne ne peut courir aussi vite qu’elle.",
+   "Le caméléon lui propose une course jusqu’au grand arbre. La gazelle éclate de rire, mais accepte le défi.",
+   "Au signal, la gazelle bondit devant. Sûre d’avoir gagné, elle s’arrête pour fanfaronner tandis que le caméléon avance sans se décourager.",
+   "Quand la gazelle repart, le caméléon a déjà atteint l’arbre. Elle découvre qu’aller vite ne suffit pas si l’on cesse d’avancer."
   ],
   "quiz": {
    "q": "Qui gagne la course dans cette version ?",
@@ -131,8 +134,8 @@
    "Français"
   ],
   "source": "SAABU-France, L’Harmattan (contes songhaï)",
-  "statut": "À compléter",
-  "resume": "Un conte étiologique songhaï qui explique pourquoi le crapaud chante dans la nuit. Résumé provisoire à remplacer par la version recueillie.",
+  "statut": "Adaptation à valider",
+  "resume": "Dans cette adaptation, le chant du crapaud résonne autrefois en plein jour et gêne les travaux du village. Une histoire étiologique, imaginée pour le prototype, qui invite à écouter les autres ; la version songhaï reste à recueillir.",
   "deco": {
    "sky": [
     "#1B2A4A",
@@ -146,9 +149,10 @@
    ]
   },
   "scenes": [
-   "Il y a longtemps, le crapaud chantait en plein jour et personne ne pouvait travailler.",
-   "Les villageois se plaignent à la lune.",
-   "Depuis ce jour, le crapaud chante la nuit, quand chacun peut l’écouter de loin."
+   "Il y a longtemps, le crapaud chantait dès le matin. Son chant couvrait les appels des voisins et les voix de celles et ceux qui travaillaient aux champs.",
+   "Les habitants lui demandent de faire une pause, mais le crapaud ne les entend pas. Le soir venu, ils confient leur souci à la lune.",
+   "La lune conseille au crapaud d’attendre que le village se repose. Il accepte d’essayer et garde sa chanson pour la nuit.",
+   "Depuis, son chant accompagne le calme du soir. Les habitants l’entendent sans qu’il couvre leurs conversations du jour."
   ],
   "quiz": {
    "q": "Quand le crapaud chante-t-il aujourd’hui ?",
@@ -163,7 +167,7 @@
  },
  {
   "id": "moose",
-  "titre": "Contes du pays des Moose",
+  "titre": "Le lièvre et l’arbre à palabres",
   "region": "Oubri",
   "peuple": "Mossi",
   "lieu": "Ziniaré",
@@ -174,8 +178,8 @@
    "Français"
   ],
   "source": "Alain-Joseph Sissao, Collection UNESCO",
-  "statut": "À compléter",
-  "resume": "Recueil de récits mossi (animaux, sagesse, vie du village). Choisir un récit précis du recueil puis rédiger votre propre adaptation.",
+  "statut": "Adaptation à valider",
+  "resume": "Quand un désaccord divise le village, le lièvre propose de réunir chacun sous l’arbre à palabres. En posant les bonnes questions, il aide les habitants à trouver une solution ensemble. Cette adaptation autour du motif du lièvre rusé ne restitue pas un conte précis du recueil cité.",
   "deco": {
    "sky": [
     "#F4A66A",
@@ -185,9 +189,10 @@
    "nuit": []
   },
   "scenes": [
-   "Sous l’arbre à palabres, les anciens racontent une histoire de ruse.",
-   "Le lièvre, petit mais malin, déjoue plus fort que lui.",
-   "Chacun repart avec une leçon de sagesse."
+   "Sous l’arbre à palabres, deux voisins se disputent à propos d’un champ. Chacun est certain d’avoir raison et personne ne veut céder.",
+   "Le lièvre propose de laisser parler les deux voisins, puis demande aux autres habitants ce qui aiderait tout le village.",
+   "En écoutant les réponses, les voisins comprennent qu’ils peuvent partager le passage qui longe le champ au lieu de se le disputer.",
+   "Le lièvre n’a pas imposé de décision : il a aidé chacun à entendre l’autre. Le village repart avec un accord et une histoire à raconter."
   ],
   "quiz": {
    "q": "Où les anciens racontent-ils l’histoire ?",
@@ -213,8 +218,8 @@
    "Français"
   ],
   "source": "Tradition orale mossi",
-  "statut": "Résumé rédigé",
-  "resume": "Fille d’un roi, Yennenga est une cavalière redoutable. Son père refuse de la marier. Elle s’enfuit à cheval, rencontre Riale, un chasseur d’éléphants, et leur fils Ouedraogo, « l’étalon », est l’ancêtre des rois mossi.",
+  "statut": "Résumé libre",
+  "resume": "Dans une version connue de la légende mossi, Yennenga, fille d’un roi, est une cavalière remarquable. Partie du royaume de son père, elle rencontre le chasseur Riale. Leur fils reçoit le nom d’Ouedraogo, « l’étalon », et la tradition le relie aux origines du royaume mossi. Les récits oraux en proposent plusieurs variantes.",
   "deco": {
    "sky": [
     "#E88B5A",
@@ -226,10 +231,11 @@
    ]
   },
   "scenes": [
-   "Yennenga, fille du roi, galope aussi bien que les meilleurs guerriers.",
-   "Son père refuse de la marier : il veut la garder près de lui.",
-   "Une nuit, elle s’enfuit à cheval et rencontre Riale, un chasseur d’éléphants.",
-   "De leur union naît Ouedraogo, « l’étalon », ancêtre des rois mossi."
+   "Yennenga, fille du roi, grandit parmi les chevaux. Elle devient une cavalière courageuse et prend part aux combats de son père.",
+   "Les années passent. Yennenga souhaite choisir sa propre voie, mais le roi refuse de la laisser partir et veut la garder auprès de lui.",
+   "Une nuit, elle quitte le royaume à cheval. Après un long voyage, elle rencontre Riale, un chasseur d’éléphants, qui l’accueille.",
+   "Yennenga et Riale fondent une famille. Leur fils reçoit le nom d’Ouedraogo, qui signifie « l’étalon » en mooré.",
+   "Dans la tradition mossi, Ouedraogo est associé aux origines du royaume. La légende de Yennenga se transmet en plusieurs versions, selon les conteurs."
   ],
   "quiz": {
    "q": "Comment s’appelle le fils de Yennenga ?",
